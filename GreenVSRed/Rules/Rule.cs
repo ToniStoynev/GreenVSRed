@@ -11,32 +11,29 @@
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
-                    if (grid[i, j] == '0' && 
-                            (   CountGreeenNeighbours(grid, i, j) == 3 
+                    if (grid[i, j] == '0' &&
+                            (CountGreeenNeighbours(grid, i, j) == 3
                                 || CountGreeenNeighbours(grid, i, j) == 6
                             )
                        )
                     {
-                        //grid[i, j] = '1';
                         nextGen[i, j] = '1';
                     }
                     else if (grid[i, j] == '0' && CountGreeenNeighbours(grid, i, j) != 3 && CountGreeenNeighbours(grid, i, j) != 6)
                     {
-                        //grid[i, j] = '1';
                         nextGen[i, j] = '0';
                     }
-                    else if (grid[i, j] == '1' 
-                            && CountGreeenNeighbours(grid, i, j) != 2 
-                            && CountGreeenNeighbours(grid, i, j) != 3 
+                    else if (grid[i, j] == '1'
+                            && CountGreeenNeighbours(grid, i, j) != 2
+                            && CountGreeenNeighbours(grid, i, j) != 3
                             && CountGreeenNeighbours(grid, i, j) != 6
                        )
                     {
-                        //grid[i, j] = '0';
                         nextGen[i, j] = '0';
                     }
-                    else if (grid[i, j] == '1' && 
+                    else if (grid[i, j] == '1' &&
                         (CountGreeenNeighbours(grid, i, j) == 2)
-                       ||CountGreeenNeighbours(grid, i, j) == 3
+                       || CountGreeenNeighbours(grid, i, j) == 3
                        || CountGreeenNeighbours(grid, i, j) == 6)
                     {
                         nextGen[i, j] = '1';
@@ -226,7 +223,7 @@
 
             //TODO
             //Inner side of the grid
-            else if(x > 0 && x < gridWidth - 1 && y > 0 && y < gridHeight - 1)
+            else if (x > 0 && x < gridWidth - 1 && y > 0 && y < gridHeight - 1)
             {
                 if (grid[x, y + 1] == '1')
                 {
